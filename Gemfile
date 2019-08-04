@@ -61,3 +61,7 @@ gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
