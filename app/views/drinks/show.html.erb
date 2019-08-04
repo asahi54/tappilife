@@ -1,0 +1,21 @@
+<div>
+    <div class="text-center">
+        <p><%= @drink.name %></p>
+        <p>のカロリーは...</p>
+    </div>
+    <div class="text-center">
+        <p><%= @drink.calorie %>kcalです！！</p>
+    </div>
+<% if user_signed_in? %>
+    <div class="text-center">
+        <%= render 'takes/take_button', drink: @drink %>
+        <%= link_to '戻る', root_path, class: 'btn btn-primary btn-block mt-2' %>
+    </div>
+<% else %>
+    <div class="text-center">
+        <%= link_to '登録する', new_user_registration_path, class: 'btn btn-lg btn-primary' %>
+        <%= link_to 'ログイン', new_user_session_path, class: 'btn btn-lg btn-primary' %>
+        <%= link_to '戻る', root_path, class: 'btn btn-xs btn-primary ml-2' %>
+    </div>
+<% end %>
+</div>

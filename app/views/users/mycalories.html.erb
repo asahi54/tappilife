@@ -1,0 +1,29 @@
+<div class="text-center">
+    <p><%= @user.username %>の</p>
+    <p>Myタピ記録</p>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ドリンク名</th>
+            <th>カロリー</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @drinks.each do |drink| %>
+        <tr>
+            <td><%= drink.name %></td>
+            <td><%= drink.calorie %>kcal</td>
+            <td><%= render 'takes/untake_button', drink: drink %>
+        </tr>
+        <% end %>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td class="text-right ">総カロリー</td>
+            <td><%= @cal_total %>kcal</td>
+        </tr>
+    </tfoot>
+</table>
+

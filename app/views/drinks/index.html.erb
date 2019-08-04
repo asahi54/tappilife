@@ -1,0 +1,14 @@
+<ul class="list-unstyled">
+  <table class="table table-striped table-bordered">
+    <tr class="text-center">
+      <th>ドリンク</th>
+      <th></th>
+    </tr>
+    <% @drinks.each do |drink| %>
+    <tr>
+      <td><%= drink.name %></td>
+      <td><%= link_to 'タピる', drink_path(drink) %></td>
+    </tr>
+    <% end %>
+  </table>
+</ul>

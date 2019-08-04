@@ -1,0 +1,4 @@
+    <%= form_with(model: current_user.takes.build, local: true) do |f| %>
+        <%= hidden_field_tag :drink_id, drink.id %>
+        <%= f.submit '記録する', class: 'btn btn-danger btn-block' %>
+    <% end %>
